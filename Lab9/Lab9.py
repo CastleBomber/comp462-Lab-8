@@ -28,12 +28,13 @@ def getTemp(address):
     return tinteger + tdecimal
 
 def main():
+    Celsius = getTemp(address)
+    mylcd = RPi_I2C_driver.lcd()
+
     while(True):
-        Celsius = getTemp(address)
-        mylcd = RPi_I2C_driver.lcd()
         mylcd.lcd_display_string("Time: " + str(datetime.datetime.now().time()), 1)
         mylcd.lcd_display_string("Temp: "+ str(Celsius) + " C", 2)
-        time.sleep(.3)
+        time.sleep(1)
         #mylcd.lcd_clear()
         #mylcd.backlight(0)
 
