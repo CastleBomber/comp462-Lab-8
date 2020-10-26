@@ -6,7 +6,7 @@ import os
 import time
 
 # DS1307 library compatible with DS3231
-os.system('sudo rmmod rtc_ds1307')
+#os.system('sudo rmmod rtc_ds1307')
 
 bus = smbus.SMBus(1)
 address = 0x68
