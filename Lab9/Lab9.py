@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import RPi_I2C_driver, time
+import datetime
 
 mylcd = RPi_I2C_driver.lcd()
 mylcd.lcd_display_string("Time: " + str(datetime.datetime.now().time()), 1)
