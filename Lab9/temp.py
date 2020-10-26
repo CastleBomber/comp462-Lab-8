@@ -2,6 +2,7 @@
 
 import smbus
 import os
+import time
 
 # Release RTC 3231
 os.system('sudo rmmod rtc_ds3231')
