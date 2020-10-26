@@ -5,9 +5,6 @@ import smbus
 import os
 import time
 
-# DS1307 library compatible with DS3231
-#os.system('sudo rmmod rtc_ds1307')
-
 bus = smbus.SMBus(1)
 address = 0x68
 CONV = 32
@@ -33,9 +30,10 @@ def getTemp(address):
 Celsius = getTemp(address)
 Fahrenheit = 9.0/5.0 * Celsius + 32
 
-mylcd = RPi_I2C_driver.lcd()
-mylcd.lcd_display_string("Time: " + str(datetime.datetime.now().time()), 1)
-mylcd.lcd_display_string("Temp: "+ str(Celsius) + " C", 2)
-time.sleep(3)
-mylcd.lcd_clear()
-mylcd.backlight(0)
+def main():
+    mylcd = RPi_I2C_driver.lcd()
+    mylcd.lcd_display_string("Time: " + str(datetime.datetime.now().time()), 1)
+    mylcd.lcd_display_string("Temp: "+ str(Celsius) + " C", 2)
+    time.sleep(3)
+    mylcd.lcd_clear()
+    mylcd.backlight(0)
