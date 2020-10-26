@@ -5,7 +5,7 @@ import os
 import time
 
 # Release RTC 3231
-os.system('sudo rmmod rtc_ds3231')
+os.system('sudo rmmod rtc_ds1307')
 
 
 # Setup RTC 3231 for temperature reading
