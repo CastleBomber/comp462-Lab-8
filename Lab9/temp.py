@@ -6,6 +6,7 @@ import os
 # Release RTC 3231
 os.system('sudo rmmod rtc_ds3231')
 
+
 # Setup RTC 3231 for temperature reading
 bus = smbus.SMBus(1)
 address = 0x68
